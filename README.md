@@ -179,3 +179,31 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+
+
+
+################################################################################
+My updates
+################################################################################
+    - android (unzip /plugins/phonegap-plugin-barcodescanner/src/android/barcodescanner-release-2.1.5.aar)
+        edit \res\layout\capture.xml, \res\layout-ldpi\capture.xml
+            add after <com.google.zxing.client.android.ViewfinderView/>:   
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/barcodescannerbg" />
+        edit \res\values\values.xml
+            edit: <color name="viewfinder_mask">#00000000</color>
+        add to \res\drawable
+            barcodescannerbg.png
+        if need to update barcodescannerbg.png
+            remove android platform
+            or update /platforms/android/libs/barcodescanner.aar too
+    - ios
+        change /plugins/phonegap-plugin-barcodescanner/src/ios/scannerOverlay.xib with customized
+        for update 
+            replace /platform/ios/Shufersal/Resources/scannerOverlay.xib
+            add image files to platform/ios/Shufersal/Resources
+                close_77x77.png
+                scan-768-x-1280.png
